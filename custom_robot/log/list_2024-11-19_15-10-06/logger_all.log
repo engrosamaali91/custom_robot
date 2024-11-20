@@ -1,0 +1,19 @@
+[0.183s] colcon DEBUG Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/osama/gbot_ws/src/custom_robot']
+[0.183s] colcon DEBUG Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/osama/gbot_ws/src/custom_robot'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7150f5d4c760>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7150f5d0b9d0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7150f5d0b9d0>>, mixin_verb=('list',))
+[0.247s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) check parameters
+[0.248s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) check parameters
+[0.248s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) check parameters
+[0.248s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) check parameters
+[0.248s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) discover
+[0.248s] colcon.colcon_core.package_discovery INFO Crawling recursively for packages in '/home/osama/gbot_ws/src/custom_robot'
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extensions ['ignore', 'ignore_ament_install']
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extension 'ignore'
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extension 'ignore_ament_install'
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extensions ['colcon_pkg']
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extension 'colcon_pkg'
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extensions ['colcon_meta']
+[0.248s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extension 'colcon_meta'
+[0.249s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extensions ['ros']
+[0.249s] colcon.colcon_core.package_identification Level 1 _identify(/home/osama/gbot_ws/src/custom_robot) by extension 'ros'
+[0.273s] colcon.colcon_core.package_identification DEBUG Package '/home/osama/gbot_ws/src/custom_robot' with type 'ros.ament_cmake' and name 'custom_robot'
+[0.273s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) using defaults
