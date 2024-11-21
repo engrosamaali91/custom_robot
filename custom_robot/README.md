@@ -28,7 +28,7 @@ sudo apt install ros-humble-slam-toolbox
 
 ### Create map using slam toolbox, copy mapper_params file to config directory 
 ```bash
-ros2 launch slam_toolbox online_async_launch.py params_file:=./src/custom_robot/config/mapper_params_online_async.yaml use_sim_time:=true
+
 ```
 
 ### Run rviz
@@ -41,3 +41,7 @@ ros2 run rviz2 rviz2
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+### save the map
+```bash
+ros2 run nav2_map_server map_saver_cli -f <map_name>
+```
