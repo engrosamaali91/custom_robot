@@ -126,4 +126,5 @@ Add another map and change the topic to global_costmap
 ```bash
 ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ```
-Ensure before running the above file slamtool box is running which provides the /map topic 
+Ensure before running the above file slamtool box is running which provides the /map topic.
+To run my launch file i provided map file and param file for navigation
