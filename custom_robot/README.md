@@ -26,10 +26,14 @@ ros2 launch custom_robot launch_sim.launch.py world:=src/custom_robot/worlds/cus
 sudo apt install ros-humble-slam-toolbox
 ```
 
-### Create map using slam toolbox, copy mapper_params file to config directory 
-```bash
 
+### Slam toolbox
+```bash
+ros2 launch slam_toolbox online_async_launch.py params_file:=./src/custom_robot/config/mapper_params_online_async.yaml use_sim_time:=true
 ```
+If needed map can be reloaded from the last saved state and expand the map by modifying mapper_params_onine_asyc.yaml file 
+and give an existing path of the saved map. and localize within the new map
+
 
 ### Run rviz
 ```bash
@@ -41,7 +45,43 @@ ros2 run rviz2 rviz2
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+use turtlebot teleop command as this gives more control over speec
+```bash
+ros2 run turtlebot3_teleop teleop_keyboard 
+```
+
 ### save the map
 ```bash
 ros2 run nav2_map_server map_saver_cli -f <map_name>
+```
+
+---------------------------------------------------------------------------
+                                  RUN AMCL For LOCALIZATION
+---------------------------------------------------------------------------
+
+### install nav2
+```bash
+sudo apt install ros-humble-navigation
+sudo apt install ros-humble-nav2-bringup
+```
+
+
+### RUN a map server
+
+THis is load saved map file and publish init on /map topic
+
+```bash
+ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=<map_path> 
+```
+
+In a seperate terminal activate map_server using
+```bash
+ros2 run nav2_util lifecycle_bringup map_server
+```
+The map is now available on /map topic, run launch file and rviz2 and set frame_id to map and map topic to /map
+Change setting to transient_local if map is not appearning 
+
+
+```bash
+ros2 run nav2_amcl amcl -p use_sim_time:=true
 ```
