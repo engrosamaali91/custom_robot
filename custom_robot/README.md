@@ -118,3 +118,12 @@ And now run navigation stack launch file
 ```bash
 ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ```
+Add another map and change the topic to global_costmap
+
+
+
+### My own launch file for navigation 
+```bash
+ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
+```
+Ensure before running the above file slamtool box is running which provides the /map topic 
