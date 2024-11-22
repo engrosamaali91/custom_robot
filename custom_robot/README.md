@@ -81,7 +81,40 @@ ros2 run nav2_util lifecycle_bringup map_server
 The map is now available on /map topic, run launch file and rviz2 and set frame_id to map and map topic to /map
 Change setting to transient_local if map is not appearning 
 
+Now the map is loaded in rviz2, move a robot using teleop, the robot will be displaced in gazebo but not is rviz2 
 
+In seperate terminal 
 ```bash
 ros2 run nav2_amcl amcl -p use_sim_time:=true
+```
+Run amcl node to activate amcl 
+```bash
+ros2 run nav2_util lifecycle_bringup amcl
+```
+
+Now give 2d pose in rviz2 to localize it. Now the robot is localized and map is loaded.
+
+
+---------------------------------------------------------------------------
+                                  NAV2 stack
+---------------------------------------------------------------------------
+
+```bash
+sudo apt install ros-humble-twist-mux
+```
+Remap command velocity output to the controller command velocity topic. red param file how it joy command velocity topic is prioritized 
+this will give control to joy controller even during autonomous navigation 
+```bash
+ros2 run twist_mux twist_mux  --ros-args --params-file ./src/custom_robot/config/twist_mux.yaml -r cmd_vel_out:=diff_cont/cmd_vel_unstamped 
+```
+
+Run gazebo and rviz2 and run slam toolbox similarly
+
+```bash
+ros2 launch slam_toolbox online_async_launch.py params_file:=./src/custom_robot/config/mapper_params_online_async.yaml use_sim_time:=true
+```
+
+And now run navigation stack launch file 
+```bash
+ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ```
