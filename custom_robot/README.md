@@ -137,3 +137,20 @@ I have prioritized cmd_vel_topic using teleop above cmd_vel topic on which nav2 
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=cmd_vel_teleop
 ```
+### run localliztion without SLAM 
+```bash
+ros2 launch nav2_bringup localization_launch.py map:=./src/custom_robot/maps/turtlebothoue.yaml use_sim_time:=true
+```
+
+Better way to do this is to copy localization lanch file to the workspace and then run from workspace 
+
+
+But for testing run navigation launch file with 
+```bash
+ ros2 launch custom_robot navigation.launch_testing.py use_sim_time:=true map_subscribe_transient_local:=true 
+```
+
+or directly from root
+```bash
+ ros2 launch nav2_bring navigation_launch.py use_sim_time:=true map_subscribe_transient_local:=true 
+```
