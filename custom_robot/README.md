@@ -107,6 +107,7 @@ this will give control to joy controller even during autonomous navigation
 ```bash
 ros2 run twist_mux twist_mux  --ros-args --params-file ./src/custom_robot/config/twist_mux.yaml -r cmd_vel_out:=diff_cont/cmd_vel_unstamped 
 ```
+Later on I changed output velocities to cmd_vel becuase robot expectes the velocities on /cmd_vel topic
 
 Run gazebo and rviz2 and run slam toolbox similarly
 
@@ -128,3 +129,11 @@ ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ```
 Ensure before running the above file slamtool box is running which provides the /map topic.
 To run my launch file i provided map file and param file for navigation
+
+
+
+### teleop remapping 
+I have prioritized cmd_vel_topic using teleop above cmd_vel topic on which nav2 is publishing velocities
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=cmd_vel_teleop
+```
