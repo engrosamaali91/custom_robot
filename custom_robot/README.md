@@ -154,3 +154,17 @@ or directly from root
 ```bash
  ros2 launch nav2_bring navigation_launch.py use_sim_time:=true map_subscribe_transient_local:=true 
 ```
+
+WHen run together i can see the robot is localized on a saved map and we do not need to run SLAM as we have already made our map
+SO to keep things simple i copied launch files from directory to my workspace and modified it as per my package.
+
+
+### Directly run localization and load map 
+```bash
+ros2 launch custom_robot location_launch.py 
+```
+
+### Directly run Nav2 stack
+```bash
+ros2 launch custom_robot navigation_launch.py use_sim_time:=true
+```
