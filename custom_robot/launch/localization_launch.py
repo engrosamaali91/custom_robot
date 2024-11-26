@@ -76,8 +76,8 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         'map',
-        # default_value=os.path.join(bringup_dir, 'maps', 'turtlebothoue.yaml'),
-        default_value='/home/osama/custom_ws/src/custom_robot/maps/turtlebothoue.yaml',
+        default_value=os.path.join(bringup_dir, 'maps', 'turtlebothoue.yaml'),
+        # default_value='/home/osama/custom_ws/src/custom_robot/maps/turtlebothoue.yaml',
         description='Full path to map yaml file to load')
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
